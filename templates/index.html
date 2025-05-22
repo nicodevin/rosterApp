@@ -2,6 +2,37 @@
 <html>
   <head>
     <title>Roster App</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <h1>Subí tu PDF de roster</h1>
+    <form method="POST" enctype="multipart/form-data">
+      <input type="file" name="pdf_file" 
+accept="application/pdf" required>
+      <button type="submit">Procesar</button>
+    </form>
+
+    {% if stats %}
+      <h2>Estadísticas del roster</h2>
+      <ul>
+        <li>Horas de vuelo: {{ stats.horas_vuelo }}</li>
+        <li>Horas de servicio: {{ stats.horas_servicio }}</li>
+        <li>Días de servicio: {{ stats.dias_servicio }}</li>
+      </ul>
+      <h3>Actividades encontradas:</h3>
+      <pre>
+      {% for act in actividades %}
+{{ act }}
+      {% endfor %}
+      </pre>
+    {% endif %}
+  </body>
+</html>
+<!doctype 
+html>
+<html>
+  <head>
+    <title>Roster App</title>
   </head>
   <body>
     <h1>Subí tu PDF de roster</h1>
